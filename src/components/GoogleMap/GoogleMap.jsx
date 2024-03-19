@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function GoogleMap({ countryName ,lattitudes,longitudes}) {
-    const [areaCountry, setAreaCountry] = useState(0);
+ 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -14,7 +14,7 @@ export default function GoogleMap({ countryName ,lattitudes,longitudes}) {
                     
                     const zoomValue = calculateZoomValue(response.data[response.data.length - 1].area);
                     console.log("Proportional Zoom Value:", zoomValue);
-                    setAreaCountry(zoomValue + 1);
+                 
     
                     // Set the map frame source after setting the area country
                     const country = countryName;
