@@ -3,12 +3,13 @@ import axios from 'axios';
 import './CountryCard.css'
 
 export default function CountryCard({ countryName, lattitudes, longitudes }) {
-
+    const apiKey = "5a3b5d0257934ff585884032242802";
     const [county, setCountry] = useState(null);
     useEffect(() => {
         const fetchData = async () => {
             if (countryName != null) {
                 try {
+                    
                     axios.get(`https://restcountries.com/v3.1/name/${countryName}`)
                         .then(response => {
                             console.log(response.data);
@@ -21,9 +22,17 @@ export default function CountryCard({ countryName, lattitudes, longitudes }) {
                 }
             } else if (lattitudes != null && longitudes != null) {
                 try {
-
+                    const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lattitudes},${longitudes}`);
+                    console.log(response.data);
+                    axios.get(`https://restcountries.com/v3.1/name/${response.data.location.country}`)
+                        .then(response => {
+                            console.log(response.data);
+                            setCountry(response.data[0]);
+                        }, error => {
+                            console.log(error);
+                        });
                 } catch (error) {
-
+                    console.error("Error fetching country data:", error);
                 }
             }
 
