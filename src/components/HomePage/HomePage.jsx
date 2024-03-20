@@ -79,7 +79,7 @@ export default function HomePage() {
                                     <div className="w-30">
                                         <Link to="/country-web/countryPage">
                                             <button href="#" class="btn btn-outline-primary btn-sm ">
-                                                <i class="bi bi-search"></i> Browse Counrty Data
+                                                <i class="bi bi-search"></i> Browse Counrty Details
                                             </button>
                                         </Link>
                                     </div>
