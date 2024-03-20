@@ -1,0 +1,12 @@
+.addShadow {
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4);
+  }
+.textData{
+    font-size: 10px;
+    text-align: center;
+}
+.textDataTopic{
+    font-size: 15px;
+    margin: 0px;
+    color: rgb(136, 136, 136);
+}
