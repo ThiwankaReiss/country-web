@@ -1,3 +1,25 @@
 .pageWidth{
     width: 100%;
-  }
+}
+.flagImage {
+  position: relative;
+  border: 1px solid #ccc;
+  font-style: italic;
+}
+
+.flagImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('./../../assets/flagImage.jpg') no-repeat;
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index: -1; /* Ensure the blurred image is behind other content */
+  opacity: 0.7; /* Adjust the opacity to control the level of blur */
+}
+
+

@@ -33,7 +33,7 @@ export default function CurrentLocation() {
     return (
         <div className="pageWidth">
             <NavBar></NavBar>
-            <div className="container">
+            <div className="container mt-5">
                 <div className="row">
                     {
                         longiVal && latiVal && (

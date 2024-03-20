@@ -69,7 +69,7 @@ export default function CountryPage() {
         <div className="pageWidth ">
             <div className="backImage">
                 <NavBar></NavBar>
-                <div className="container ">
+                <div className="container mt-5">
                     <div className="row ">
                         <div className='col-lg-9'>
                             <div className="col-md-6 p-lg-5 mx-auto my-5">

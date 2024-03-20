@@ -1,9 +1,19 @@
-.leftMargin{
-    margin-left: 6px;
+.navBarCustom {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the navbar stays above other content */
 }
-.navBarColor{
-    background-color: rgb(248,228,220);
+
+.navbar-brand {
+    color: #333;
 }
-.pageWidth{
-    width: 100%;
-  }
+
+.navbar-nav .nav-link {
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+}
