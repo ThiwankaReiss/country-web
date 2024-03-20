@@ -99,7 +99,7 @@ export default function WeatherCard({ location }) {
                                     <div className="row">
                                         {weatherData && weatherData.forecast.forecastday[0].hour.map((data, index) => (
                                             <React.Fragment key={index}>
-                                                
+
                                                 <div className="col-lg-2 col-md-2">
                                                     <div className='align-items-center justify-items-center'>
                                                         <div className='textData'>{data && (data.time).split(" ")[1]}{index < 12 && "a.m" || index == 12 && "noon" || "p.m"}</div>

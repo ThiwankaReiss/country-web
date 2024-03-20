@@ -17,9 +17,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         
-        <Route path='/' element={<HomePage />}></Route>
-        <Route path='/currentLocation' element={<CurrentLocation />}></Route>
-        <Route path='/countryPage' element={<CountryPage />}></Route>
+        <Route path='/country-web/' element={<HomePage />}></Route>
+        <Route path='/country-web/currentLocation' element={<CurrentLocation />}></Route>
+        <Route path='/country-web/countryPage' element={<CountryPage />}></Route>
       </Routes>
     </BrowserRouter>
     </div>

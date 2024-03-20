@@ -45,7 +45,7 @@ export default function HomePage() {
                 </div>
                 <div class="row mb-2" >
                     <div class="col-md-6">
-                        <div  class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
                                 <strong class="d-inline-block mb-2 text-primary-emphasis">Local</strong>
                                 <h3 class="mb-0 text-success">Current Location</h3>
@@ -53,7 +53,7 @@ export default function HomePage() {
                                 <p class="card-text mb-auto">Visit this section and allow site to access your location to get details about your location.</p>
                                 <div className="w-100 d-flex justify-content-end">
                                     <div className="w-30">
-                                        <Link to="/currentLocation">
+                                        <Link to="/country-web/currentLocation">
                                             <button href="#" class="btn btn-outline-primary btn-sm ">
                                                 <i class="bi bi-geo-alt"></i> Find My Location
                                             </button>
@@ -77,7 +77,7 @@ export default function HomePage() {
                                 <p class="card-text mb-auto">Visit this section to get details about various countries.</p>
                                 <div className="w-100 d-flex justify-content-end">
                                     <div className="w-30">
-                                        <Link to="/countryPage">
+                                        <Link to="/country-web/countryPage">
                                             <button href="#" class="btn btn-outline-primary btn-sm ">
                                                 <i class="bi bi-search"></i> Browse Counrty Data
                                             </button>
