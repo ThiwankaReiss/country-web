@@ -1,3 +1,7 @@
 .pageWidth{
     width: 100%;
-  }
+}
+.backImage{
+    background: url('./../../assets/earthImage.jpg');
+    background-size: cover;
+}

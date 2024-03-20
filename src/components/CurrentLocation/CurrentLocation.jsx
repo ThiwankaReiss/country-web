@@ -3,20 +3,61 @@ import GoogleMap from "../GoogleMap/GoogleMap"
 import "./CurrentLocation.css"
 import CountryCard from "../CountryCard/CountryCard"
 import WeatherCard from "../WeatherCard/WeatherCard"
-export default function CurrentLocation(){
-    return(
+import React, { useState, useEffect } from 'react';
+
+export default function CurrentLocation() {
+    const [isFirstTime, setIsFirstTime] = useState(true);
+    const [longiVal, setLongiVal] = useState(null);
+    const [latiVal, setLatVal] = useState(null);
+   
+    getLocation();
+    function getLocation() {
+        if (isFirstTime) {
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        }
+
+    }
+
+    function showPosition(position) {
+        console.log(position.coords.latitude + "," + position.coords.longitude);
+        // setSearchVal(position.coords.latitude + "," + position.coords.longitude);
+        setLongiVal(position.coords.longitude);
+        setLatVal(position.coords.latitude);
+        setIsFirstTime(false);
+    }
+    return (
         <div className="pageWidth">
             <NavBar></NavBar>
             <div className="container">
                 <div className="row">
-                    <GoogleMap lattitudes="6.7881" longitudes="79.8913" ></GoogleMap>
+                    {
+                        longiVal && latiVal && (
+                            <GoogleMap lattitudes={latiVal} longitudes={longiVal} ></GoogleMap>
+                        )
+                    }
+
                 </div>
                 <div className="row">
                     <div className="col-lg-6 col-md-6">
-                        <CountryCard lattitudes="6.7881" longitudes="79.8913"></CountryCard>
+                        {
+                            longiVal && latiVal && (
+                                <CountryCard lattitudes={latiVal} longitudes={longiVal} ></CountryCard>
+                            )
+                        }
+
                     </div>
                     <div className="col-lg-6 col-md-6">
-                        <WeatherCard location="6.7881,79.8913" ></WeatherCard>
+                        {
+                            longiVal && latiVal && (
+                                <WeatherCard location={latiVal+","+longiVal}></WeatherCard>
+                            )
+                        }
+
                     </div>
                 </div>
             </div>
